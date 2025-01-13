@@ -1,0 +1,22 @@
+# Virtual environments
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# PyCharm project files
+.idea/
+
+# Log files
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Other files
+*.bak
+*.swp
+*.swo
