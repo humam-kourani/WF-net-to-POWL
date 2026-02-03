@@ -6,7 +6,7 @@ from pm4py.objects.powl.obj import POWL
 import os
 import csv
 
-from implementation.converter import convert_workflow_net_to_powl
+from implementation_old.converter import convert_workflow_net_to_powl
 
 
 def get_leaves(model: POWL):

@@ -3,14 +3,15 @@ import time
 import pm4py
 from pm4py.algo.simulation.tree_generator.algorithm import apply as tree_gen
 from pm4py.objects.powl.obj import POWL
+from powl.objects.obj import POWL as POWL_20
 
 import os
 import csv
 
-from utils.pn_to_powl.converter import convert_workflow_net_to_powl
+from implementation_old.converter import convert_workflow_net_to_powl as old_converter
 
 
-def get_leaves(model: POWL):
+def get_leaves(model: POWL | POWL_20):
     if model.children:
         res = []
         for child in model.children:
@@ -42,7 +43,7 @@ for i in range(1, 1001):
     pn, im, fm = pm4py.convert_to_petri_net(tree)
     start_time = time.time()
     try:
-        powl_model = convert_workflow_net_to_powl(pn)
+        powl_model = old_converter(pn)
     except:
         with open(csv_file, mode='a', newline='') as file:
             writer = csv.writer(file)
